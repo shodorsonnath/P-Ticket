@@ -3,13 +3,15 @@ function selectedSit(seat) {
   let countSeats = document.getElementById("count-seat");
   let totalSeats = document.getElementById("total-seat");
 
+  let totalSeatValue = parseInt(totalSeats.innerHTML);
+  let updatedTotalSeats = totalSeatValue - 1;
+  totalSeats.innerHTML = updatedTotalSeats;
+
   if (selectedSeats.length >= 4) {
     alert("You cannot buy more than 4 seats.");
     return;
   }
-
-  let countSeatsTotal = selectedSeats.length + 1;
-
+  
   seat.classList.add("selected");
   countSeats.innerText = selectedSeats.length + 1;
 
